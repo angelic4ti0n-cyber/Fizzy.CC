@@ -1,0 +1,15 @@
+local SupportedGames = {
+    [11746368176] = "https://raw.githubusercontent.com/angelic4ti0n-cyber/Fizzy.CC/refs/heads/main/ValoBloxx"
+}
+
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local currentPlaceId = game.PlaceId
+
+if SupportedGames[currentPlaceId] then
+    pcall(function()
+        loadstring(game:HttpGet(SupportedGames[currentPlaceId]))()
+    end)
+end
